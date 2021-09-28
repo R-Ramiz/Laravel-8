@@ -1,0 +1,76 @@
+-*--*--*--*--*--*--*--*--*--*-LaravelcRUD-*--*--*--*--*--*--*--*--*--*--*-
+
+1.) CREATE NEW PROJECT 
+
+ -> C:\xampp\htdocs\composer create-project --prefer-dist laravel/laravel projectName
+
+2. To create controller
+ -> php artisan make:controller CustomerController
+
+3. To create Table
+ -> php artisan make:migration create_customers_table
+
+4. To Migrate Table in DB
+ -> php artisan migrate
+
+
+
+
+-*--*--*--*--*--*--*--*--*--*--*-Auth-*--*--*--*--*--*--*--*--*--*--*-
+
+after Project setup
+
+A.) Create Database 
+B.) set db name in .env file
+
+
+
+1.) composer require laravel/jetstream
+
+2.) php artisan jetstream:install livewire
+
+3.) npm install
+
+4.) npm run dev
+
+5.) php artisan migrate
+
+
+
+-*--*--*--*--*--*--*-Server Side Data Table-*--*--*--*--*--*--*--*--*-
+
+LINK:https://onlinewebtutorblog.com/laravel-8-yajrabox-server-side-datatable-tutorial/
+
+after Project setup
+
+A.) Create Database 
+B.) set db name in .env file
+
+
+1.)Install Yajra Datatable 
+cmd-> composer require yajra/laravel-datatables-oracle
+
+2.)Update Application Provider List
+cmd-> Yajra\DataTables\DataTablesServiceProvider::class,
+
+
+3.)Migrate  your table
+cmd-> php artisan migrate
+
+4.)create route file
+
+Route::get('users', [UserController::class, 'index'])->name('users.index');
+
+5.) Create Controller
+cmd-> php artisan make:controller UserController
+
+6.)add 'use' links in your controller file
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use DataTables;
+
+
+7.)create ajax response
+
+8.)Create Blade Layout File with ajax request
